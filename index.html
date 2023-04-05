@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>JobLink</title>
+	</head>
+	<body>
+		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+		<div class="wrapper" id="app">
+			<header class="header">
+				<div class="header__container">
+					<div class="header__left">
+						<a href="index.html">
+							<img src="img/logo.svg" alt="logo" class="header__logo" />
+						</a>
+						<ul class="header__menu">
+							<li><a href="index.html">Главная</a></li>
+							<li><a href="news.html">Новости</a></li>
+							<li><a href="contact.html">Контакты</a></li>
+							<li><a href="vacancy.html">Вакансии</a></li>
+						</ul>
+					</div>
+					<div class="header__right"></div>
+				</div>
+			</header>
+			<main class="main">
+				<div class="hero">
+					<div class="hero__container">
+						<div class="hero__text">
+							<h1>Найдите свою работу мечты с <span> JobLink!</span></h1>
+							<p>
+								Ваш партнер в поиске работы. Мы поможем вам найти идеальное
+								место для вашей карьеры.
+							</p>
+							<div class="auth__menu">
+								<a href="vacancy.html"><button>Поиск работы</button></a>
+								<a href="vacancy.html">Поиск работников</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="goal">
+					<div class="goal__container">
+						<h2>Наша цель</h2>
+						<p>
+							Наша цель - помочь людям найти достойное и стабильное место
+							работы, а также содействовать работодателям в поиске
+							квалифицированных специалистов для их компаний. Мы стремимся
+							создать прочные связи между работодателями и соискателями,
+							обеспечивая высокий уровень сервиса и профессионализма в нашей
+							работе.
+						</p>
+					</div>
+				</div>
+				<div class="news">
+					<div class="news__container">
+						<h2>Новости</h2>
+						<ul class="news__list" v-if="news == null">
+							<li class="news__item">
+								<img src="img/news-1.png" alt="news" />
+								<p>
+									Служба занятости запускает новый проект поддержки молодых
+									предпринимателей
+								</p>
+							</li>
+							<li class="news__item">
+								<img src="img/news-1.png" alt="news" />
+								<p>
+									Служба занятости запускает новый проект поддержки молодых
+									предпринимателей
+								</p>
+							</li>
+							<li class="news__item">
+								<img src="img/news-1.png" alt="news" />
+								<p>
+									Служба занятости запускает новый проект поддержки молодых
+									предпринимателей
+								</p>
+							</li>
+						</ul>
+						<ul class="news__list" v-if="news">
+							<li class="news__item">
+								<img src="img/news-1.png" alt="news" />
+								<p>
+									Запущен новый портал Attestify для упрощения процесса
+									аттестации преподавателей
+								</p>
+							</li>
+							<li class="news__item">
+								<img src="img/news-1.png" alt="news" />
+								<p>
+									Запущен новый портал Attestify для упрощения процесса
+									аттестации преподавателей
+								</p>
+							</li>
+							<li class="news__item">
+								<img src="img/news-1.png" alt="news" />
+								<p>
+									Запущен новый портал Attestify для упрощения процесса
+									аттестации преподавателей
+								</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="connect">
+					<div class="connect__container">
+						<h2>Связь с нами</h2>
+						<p>Свяжитесь с нами и получите помощь от нашей поддержки</p>
+						<form v-on:submit.prevent="sendAppeal">
+							<input
+								v-model="email"
+								type="email"
+								placeholder="Почта"
+								required
+							/>
+							<input v-model="name" type="text" placeholder="Имя" required />
+							<input
+								v-model="message"
+								type="text"
+								placeholder="Сообщение"
+								required
+							/>
+							<button>Отправить</button>
+						</form>
+					</div>
+				</div>
+			</main>
+			<footer class="footer">
+				<div class="footer__copyright">@ JobLink 2023 - Все права защищены</div>
+			</footer>
+		</div>
+		<script>
+			const { createApp } = Vue;
+
+			createApp({
+				data() {
+					return {
+						news: null,
+						name: "",
+						email: "",
+						message: "",
+					};
+				},
+				mounted() {
+					let url = "http://attestify/public/api/news";
+					let response = fetch(url);
+
+					let news = response.json();
+
+					if (news != null) {
+						this.news = news;
+					}
+				},
+				methods: {
+					sendAppeal() {
+						let appeal = {
+							name: this.name,
+							email: this.email,
+							message: this.message,
+						};
+						let url = "http://attestify/public/api/setAppeal";
+						let response = fetch(url, {
+							method: "POST",
+							headers: {
+								"Content-Type": "application/json;charset=utf-8",
+							},
+							body: JSON.stringify(appeal),
+						});
+						alert("Обращение было отправлено!");
+					},
+				},
+			}).mount("#app");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>Банк вакансий</title>
+	</head>
+	<body>
+		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+		<div class="wrapper" id="app">
+			<header class="header">
+				<div class="header__container">
+					<div class="header__left">
+						<a href="index.html">
+							<img src="img/logo.svg" alt="logo" class="header__logo" />
+						</a>
+						<ul class="header__menu">
+							<li><a href="index.html">Главная</a></li>
+							<li><a href="news.html">Новости</a></li>
+							<li><a href="contact.html">Контакты</a></li>
+							<li><a href="vacancy.html">Вакансии</a></li>
+						</ul>
+					</div>
+					<div class="header__right"></div>
+				</div>
+			</header>
+			<main class="main">
+				<div class="vacancy">
+					<div class="vacancy__container">
+						<div class="vacancy__buttons">
+							<button
+								v-bind:class="{ buttonCheck: status }"
+								@click="changeStatus(true)"
+							>
+								Поиск работы
+							</button>
+							<button
+								v-bind:class="{ buttonCheck: !status }"
+								@click="changeStatus(false)"
+							>
+								Поиск работников
+							</button>
+						</div>
+						<div class="table__container">
+							<table class="vacancy__table" v-if="status">
+								<tr>
+									<th>Профессия</th>
+									<th>Зарплата</th>
+									<th>Район</th>
+									<th>Организация / источник вакансии</th>
+									<th>Дата актуальности</th>
+									<th>Вакантных мест</th>
+								</tr>
+								<tr>
+									<td><a href="#"> Менеджер</a></td>
+									<td>от 19000</td>
+									<td>
+										Наримановский муниципальный район, город Нариманов, г
+										Нариманов
+									</td>
+									<td><a href="#"> ПАО СБЕРБАНК</a></td>
+									<td>28.03.2023</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td><a href="#"> Менеджер</a></td>
+									<td>от 19000</td>
+									<td>
+										Наримановский муниципальный район, город Нариманов, г
+										Нариманов
+									</td>
+									<td><a href="#"> ПАО СБЕРБАНК</a></td>
+									<td>28.03.2023</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td><a href="#"> Менеджер</a></td>
+									<td>от 19000</td>
+									<td>
+										Наримановский муниципальный район, город Нариманов, г
+										Нариманов
+									</td>
+									<td><a href="#"> ПАО СБЕРБАНК</a></td>
+									<td>28.03.2023</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td><a href="#"> Менеджер</a></td>
+									<td>от 19000</td>
+									<td>
+										Наримановский муниципальный район, город Нариманов, г
+										Нариманов
+									</td>
+									<td><a href="#"> ПАО СБЕРБАНК</a></td>
+									<td>28.03.2023</td>
+									<td>1</td>
+								</tr>
+							</table>
+							<table class="vacancy__table" v-if="!status">
+								<tr>
+									<th>Профессия</th>
+									<th>Общий стаж</th>
+									<th>Образование</th>
+									<th>Дата публикации</th>
+									<th>Место регистрации</th>
+								</tr>
+								<tr>
+									<td><a href="#">Менеджер</a></td>
+									<td>3 года 8 мес</td>
+									<td>Среднее профессиональное образование</td>
+									<td>21.11.2017</td>
+									<td>ЦЗН Енотаевского района</td>
+								</tr>
+								<tr>
+									<td><a href="#">Менеджер</a></td>
+									<td>3 года 8 мес</td>
+									<td>Среднее профессиональное образование</td>
+									<td>21.11.2017</td>
+									<td>ЦЗН Енотаевского района</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</main>
+			<footer class="footer">
+				<div class="footer__copyright">@ JobLink 2023 - Все права защищены</div>
+			</footer>
+		</div>
+		<script>
+			const { createApp } = Vue;
+
+			createApp({
+				data() {
+					return {
+						status: true,
+					};
+				},
+				mounted() {},
+				methods: {
+					changeStatus(status) {
+						this.status = status;
+					},
+				},
+			}).mount("#app");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,462 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+
+html {
+	font-family: "Montserrat", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+html {
+	font-size: 0.520835vw;
+	font-style: normal;
+	font-weight: normal;
+	-webkit-animation: bugfix infinite 1s;
+	line-height: 1.2;
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-style: normal;
+	font-weight: normal;
+	-webkit-animation: bugfix infinite 1s;
+	line-height: 1.2;
+	margin: 0;
+	padding: 0;
+}
+
+input,
+textarea {
+	-webkit-animation: bugfix infinite 1s;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+}
+a {
+	color: unset;
+}
+a,
+a:hover {
+	text-decoration: none;
+}
+
+button,
+a {
+	cursor: pointer;
+}
+
+button,
+input,
+a,
+textarea {
+	outline: none;
+	font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font: inherit;
+	margin: 0;
+	padding: 0;
+}
+p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+button {
+	border: none;
+	color: inherit;
+	font: inherit;
+	text-align: inherit;
+	padding: 0;
+	background-color: inherit;
+}
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+ul li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+.wrapper {
+	font-size: 1.6rem;
+	line-height: 2.1rem;
+	color: #000000;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.main {
+	position: relative;
+	min-height: 100%;
+	flex: 1 1 auto;
+}
+
+.footer {
+	flex: 0 0 auto;
+}
+
+[class*="__container"] {
+	max-width: 123.6rem;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+
+.header {
+	width: 100%;
+	border-bottom: 1px solid #dcdcdc;
+	background-color: #0f4c81;
+	color: white;
+}
+
+.header__container {
+	display: flex;
+	justify-content: space-between;
+	height: 4.8rem;
+	align-items: center;
+}
+
+.header__left {
+	display: flex;
+	gap: 2.5rem;
+	align-items: center;
+}
+
+.contact__maps {
+	margin-top: 2rem;
+}
+
+.header__left a {
+	display: flex;
+	align-items: center;
+}
+
+.header__menu {
+	display: flex;
+	gap: 2.5rem;
+	font-weight: 600;
+	font-size: 1.4rem;
+}
+
+.auth__menu {
+	display: flex;
+	gap: 1.4rem;
+	font-size: 1.4rem;
+	font-weight: 600;
+	align-items: center;
+}
+
+.auth__menu button {
+	background-color: #ffa500;
+	color: white;
+	padding: 0.6rem 0.9rem;
+	border-radius: 0.8rem;
+}
+
+.hero {
+	margin-top: 7.8rem;
+}
+
+.hero__text {
+	max-width: 55.4rem;
+}
+.hero h1 {
+	font-weight: 700;
+	font-size: 3.2rem;
+	line-height: 3.9rem;
+	margin-bottom: 3rem;
+}
+
+.header__logo {
+	width: 10.8rem;
+	height: 2.9rem;
+}
+
+.hero span {
+	color: #ffa500;
+}
+
+.hero p {
+	font-weight: 600;
+	font-size: 2rem;
+	line-height: 2.4rem;
+	margin-bottom: 3rem;
+}
+
+.goal {
+	margin-top: 6rem;
+	background-color: #0f4c81;
+	color: white;
+	padding: 7rem 0;
+}
+
+.goal h2 {
+	font-size: 2.4rem;
+	font-weight: 600;
+}
+
+.goal p {
+	margin-top: 3.5rem;
+	max-width: 70.8rem;
+	font-size: 1.6rem;
+	line-height: 2rem;
+}
+
+.news {
+	margin-top: 5.5rem;
+}
+
+.news h2 {
+	font-weight: 600;
+	font-size: 2.4rem;
+}
+
+.news__list {
+	display: flex;
+	gap: 3rem;
+	margin-top: 3.5rem;
+}
+
+.news__item {
+	cursor: pointer;
+}
+
+.news__item p {
+	font-weight: 600;
+	font-size: 2rem;
+	line-height: 2.4rem;
+}
+
+.news__item img {
+	border-radius: 0.8rem;
+	width: 39.2rem;
+	height: 25.8rem;
+}
+
+.connect {
+	margin-top: 10rem;
+}
+
+.connect h2 {
+	font-size: 2.4rem;
+	font-weight: 600;
+}
+
+.connect p {
+	margin-top: 2rem;
+	font-weight: 600;
+	font-size: 1.6rem;
+	max-width: 29.5rem;
+}
+
+.connect form {
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.connect input {
+	width: 29rem;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid black;
+	padding-bottom: 1rem;
+	font-size: 1.6rem;
+}
+
+.connect button {
+	width: max-content;
+	padding: 0.6rem 0.9rem;
+	background-color: #ffa500;
+	border-radius: 0.8rem;
+	color: white;
+	font-size: 1.6rem;
+	font-weight: 600;
+}
+
+.footer {
+	margin-top: 5rem;
+	border-top: 1px solid #dcdcdc;
+	background-color: white;
+	padding: 2rem 0;
+	text-align: center;
+	font-size: 1.6rem;
+}
+
+.contact h1 {
+	font-weight: 600;
+	font-size: 2.4rem;
+	margin-bottom: 2rem;
+}
+
+.contact {
+	margin-top: 5rem;
+}
+
+.contact__list {
+	list-style: disc;
+}
+
+.auth {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20rem;
+}
+
+.auth form {
+	display: flex;
+	width: 45rem;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.auth h1 {
+	font-size: 2.4rem;
+	font-weight: 600;
+}
+
+.auth input {
+	height: 4.4rem;
+	text-indent: 0.5rem;
+	border-radius: 0.8rem;
+	border: 1px solid gray;
+}
+
+.auth button {
+	background-color: #0084c4;
+	height: 4.4rem;
+	font-size: 1.6rem;
+	text-align: center;
+	color: white;
+	font-weight: 600;
+	border-radius: 0.8rem;
+}
+
+.profile {
+	margin-top: 5rem;
+}
+
+.profile h1 {
+	font-size: 3.2rem;
+	font-weight: 600;
+	margin-bottom: 5rem;
+}
+
+.profile__login {
+	font-size: 2.4rem;
+	margin-bottom: 5rem;
+}
+
+.attestation__list {
+	display: flex;
+	gap: 1.5rem;
+	flex-wrap: wrap;
+}
+
+.attestation p {
+	font-size: 2rem;
+	line-height: 2rem;
+	margin-bottom: 1rem;
+}
+
+.attestation img {
+	border-radius: 0.8rem;
+	width: 39.2rem;
+	height: 25.8rem;
+	margin-bottom: 1rem;
+}
+
+.attestation h2 {
+	font-size: 2.4rem;
+	font-weight: 600;
+	margin-bottom: 2rem;
+}
+
+.attestation button {
+	color: white;
+	width: 100%;
+	background-color: #0084c4;
+	font-size: 2rem;
+	text-align: center;
+	padding: 0.8rem 0;
+	border-radius: 0.8rem;
+}
+
+.profile__exit h3 {
+	margin-top: 5rem;
+	font-size: 2.4rem;
+	font-weight: 600;
+	margin-bottom: 2rem;
+}
+
+.profile__exit button {
+	color: white;
+	font-weight: 600;
+	background-color: #0084c4;
+	font-size: 2rem;
+	text-align: center;
+	padding: 0.6rem 0.9rem;
+	border-radius: 0.8rem;
+}
+
+.success {
+	background-color: green;
+}
+
+.vacancy__buttons {
+	margin-top: 5rem;
+	width: max-content;
+	border: 1px solid black;
+	border-radius: 0.8rem;
+	margin-bottom: 5rem;
+}
+
+.buttonCheck {
+	background-color: #ffa500;
+	color: white;
+	border-radius: 0.8rem;
+	border: none;
+}
+
+.vacancy__buttons button {
+	padding: 1rem;
+}
+
+.table__container {
+	width: 100%;
+}
+
+.vacancy__table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.vacancy__table a {
+	color: blue;
+}
+
+th,
+td {
+	border: 1px solid gray;
+	padding: 1rem;
+}
